@@ -1,0 +1,212 @@
+/* Base Styles & Neumorphism Variables */
+:root {
+    --bg-color: #e0e5ec;
+    --text-color: #4d5b68;
+    --text-color-light: #8b9fb1;
+    --shadow-light: #ffffff;
+    --shadow-dark: #a3b1c6;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Neumorphism Utilities */
+.neu-box {
+    background: var(--bg-color);
+    border-radius: 20px;
+    box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), 
+                -9px -9px 16px rgba(255, 255, 255, 0.5);
+}
+
+.neu-box-inset {
+    background: var(--bg-color);
+    border-radius: 20px;
+    box-shadow: inset 6px 6px 10px rgba(163, 177, 198, 0.6), 
+                inset -6px -6px 10px rgba(255, 255, 255, 0.5);
+}
+
+.neu-button {
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 6px 6px 10px rgba(163, 177, 198, 0.6), 
+                -6px -6px 10px rgba(255, 255, 255, 0.5);
+}
+
+.neu-button:hover {
+    color: #3182ce;
+}
+
+.neu-button:active {
+    box-shadow: inset 4px 4px 8px rgba(163, 177, 198, 0.6), 
+                inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+
+.neu-input {
+    background: var(--bg-color);
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    padding: 15px;
+    width: 100%;
+    color: var(--text-color);
+    font-size: 16px;
+    box-shadow: inset 4px 4px 8px rgba(163, 177, 198, 0.6), 
+                inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+    transition: all 0.2s ease;
+}
+
+.neu-input:focus {
+    box-shadow: inset 6px 6px 12px rgba(163, 177, 198, 0.7), 
+                inset -6px -6px 12px rgba(255, 255, 255, 0.6);
+}
+
+.neu-input::placeholder {
+    color: var(--text-color-light);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(224, 229, 236, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    padding: 40px;
+    transform: translateY(-20px) scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.open-btn {
+    padding: 15px 40px;
+    font-size: 18px;
+}
+
+/* Form Styles */
+.input-group {
+    margin-bottom: 25px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.neu-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background: var(--bg-color);
+    box-shadow: 3px 3px 6px rgba(163, 177, 198, 0.6), 
+                -3px -3px 6px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+
+.neu-checkbox:checked {
+    box-shadow: inset 2px 2px 5px rgba(163, 177, 198, 0.6), 
+                inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+}
+
+.neu-checkbox:checked::after {
+    content: '✔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: #3182ce;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 30px 20px;
+    }
+}

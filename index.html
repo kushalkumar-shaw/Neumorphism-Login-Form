@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neumorphism Login Form</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Button to open the modal -->
+    <button id="openModalBtn" class="neu-button open-btn" aria-label="Open Login Modal">Open Login</button>
+
+    <!-- Modal Overlay -->
+    <div id="loginModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+        <!-- Modal Content -->
+        <div class="modal-content neu-box">
+            <button id="closeModalBtn" class="neu-button close-btn" aria-label="Close Login Modal">&times;</button>
+            <h2 id="modalTitle" class="title">Login</h2>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username" class="sr-only">Username</label>
+                    <input type="text" id="username" class="neu-input" placeholder="Username" required aria-required="true">
+                </div>
+                
+                <div class="input-group">
+                    <label for="password" class="sr-only">Password</label>
+                    <input type="password" id="password" class="neu-input" placeholder="Password" required aria-required="true">
+                </div>
+                
+                <div class="input-group checkbox-group">
+                    <input type="checkbox" id="remember" class="neu-checkbox">
+                    <label for="remember">Remember me</label>
+                </div>
+                
+                <button type="submit" class="neu-button submit-btn">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
