@@ -1,5 +1,9 @@
 # Neumorphism Login Form
 
+**Live Demo:** [https://kushalkumar-shaw.github.io/Neumorphism-Login-Form/](https://kushalkumar-shaw.github.io/Neumorphism-Login-Form/)
+
+![Screenshot](sc/main.jpg)
+
 This project demonstrates a fully functional, responsive, and accessible login form designed using the Neumorphism (Soft UI) aesthetic. It features an interactive modal built with HTML, CSS, and Vanilla JavaScript.
 
 ## Features
